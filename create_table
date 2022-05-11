@@ -1,0 +1,6 @@
+
+CREATE TABLE ΧΧΧΧΧΧ (
+	region TEXT,
+	city TEXT,
+	legal_status TEXT
+);
