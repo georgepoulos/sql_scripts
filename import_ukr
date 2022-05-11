@@ -1,0 +1,14 @@
+/* Import Data with Ukr */
+
+select locations_estia_new.id, e.region, e.city, count(e.city) as total,
+sum(case when e.legal_status like "Ben%" then 1 else 0 end) as refugee,
+sum(case when e.legal_status like "As%" or e.legal_status like "Unkn%" or e.legal_status like "Out%" then 1 else 0 end) as asylum_seeker, /*New addition for Unknown*/
+/*sum(case when e.legal_status like "Out%" then 1 else 0 end) as oop*/
+sum(case when e.legal_status like "Uncl%" then 1 else 0 end) as pd60
+from estia26042022 as e /*change estiaΧΧΧΧΧΧ to the correct table*/
+inner join locations_estia_new 
+on e.city = locations_estia_new.english_name
+/*where date_of_exit isnull*/ 
+group by city;
+
+/* Export Data and check the SUMS with Ukr as pd60*/
