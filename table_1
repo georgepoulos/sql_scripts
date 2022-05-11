@@ -1,0 +1,4 @@
+CREATE TABLE locations_estia_new (id TEXT, greek_name TEXT, english_name TEXT);
+INSERT INTO locations_estia_new (id,greek_name,english_name) VALUES ('10','Αγίας Βαρβάρας','Agia Varvara');
+INSERT INTO locations_estia_new (id,greek_name,english_name) VALUES ('11','Αγίας Παρασκευής','Agia Paraskevi');
+INSERT INTO locations_estia_new (id,greek_name,english_name) VALUES ('12','Αγίου Δημητρίου','Agios Dimitrios');
